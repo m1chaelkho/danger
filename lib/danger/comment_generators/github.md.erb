@@ -9,7 +9,7 @@
   <%- if table[:content].any? || table[:resolved].any? -%>
   <%- if table[:name].include?("Messages") -%>
     <details>
-        <summary><h3>Messages</h3></summary>
+        <summary><h3><%= table[:name] %></h3></summary>
   <%- end -%>
 <table>
   <thead>
