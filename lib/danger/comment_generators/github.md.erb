@@ -7,6 +7,10 @@
 -->
 <%- @tables.each do |table| -%>
   <%- if table[:content].any? || table[:resolved].any? -%>
+  <%- if table[:name].include?("Messages") -%>
+    <details>
+        <summary><h3>Messages</h3></summary>
+  <%- end -%>
 <table>
   <thead>
     <tr>
@@ -36,17 +40,17 @@
         </td>
       </tr>
     <%- end -%>
-    <details>
-    <summary><h3>Message</h3></summary>
     <%- table[:resolved].each do |message| -%>
       <tr>
         <td>:white_check_mark:</td>
         <td data-sticky="true"><del><%= message %></del></td>
       </tr>
     <%- end -%>
-    </details>
   </tbody>
 </table>
+  <%- if table[:name].include?("Messages") -%>
+    </details>
+  <%- end -%>
   <%- end -%>
 <%- end -%>
 
