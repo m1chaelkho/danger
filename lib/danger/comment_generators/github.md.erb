@@ -1,3 +1,4 @@
+
 <!--
   <%- @tables.each do |table| -%>
   <%= pluralize(table[:name], table[:count]) %><%= ": #{truncate(table[:content].first.message)}" if table[:count] > 0 %>
@@ -35,12 +36,15 @@
         </td>
       </tr>
     <%- end -%>
+    <details>
+    <summary><h3>Message</h3></summary>
     <%- table[:resolved].each do |message| -%>
       <tr>
         <td>:white_check_mark:</td>
         <td data-sticky="true"><del><%= message %></del></td>
       </tr>
     <%- end -%>
+    </details>
   </tbody>
 </table>
   <%- end -%>
