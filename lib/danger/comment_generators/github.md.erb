@@ -7,10 +7,8 @@
 -->
 <%- @tables.each do |table| -%>
   <%- if table[:content].any? || table[:resolved].any? -%>
-  <%- if table[:name].include?("Messages") -%>
-    <details>
+  <details>
         <summary><h3><%= table[:name] %></h3></summary>
-  <%- end -%>
 <table>
   <thead>
     <tr>
@@ -48,9 +46,7 @@
     <%- end -%>
   </tbody>
 </table>
-  <%- if table[:name].include?("Messages") -%>
     </details>
-  <%- end -%>
   <%- end -%>
 <%- end -%>
 
