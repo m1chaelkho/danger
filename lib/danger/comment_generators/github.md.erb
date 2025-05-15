@@ -1,8 +1,13 @@
-
 <%- if @danger_id.include?("modules") -%>
-<h2>Danger Report Modules</h2>
+<%- if @danger_id == "danger-pr-modules" -%>
+<h2>Danger Report Modules - Github Action</h2>
 <%- else -%>
-<h2>Danger Report MainApp</h2>
+<h2>Danger Report Modules - Bitrise</h2>
+<%- else -%>
+<%- if @danger_id == "danger-pr-main" -%>
+<h2>Danger Report MainApp - Github Action</h2>
+<%- else -%>
+<h2>Danger Report MainApp - Bitrise</h2>
 <%- end -%>
 <!--
   <%- @tables.each do |table| -%>
