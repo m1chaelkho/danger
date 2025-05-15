@@ -1,5 +1,9 @@
 
-<h1>Danger Report <%= @danger_id %></h1>
+<%- if @danger_id.include?("modules") -%>
+    <h2>Danger Report Modules</h2>
+<%- else -%>
+    <h2>Danger Report MainApp</h2>
+<%- end -%>
 <!--
   <%- @tables.each do |table| -%>
   <%= pluralize(table[:name], table[:count]) %><%= ": #{truncate(table[:content].first.message)}" if table[:count] > 0 %>
